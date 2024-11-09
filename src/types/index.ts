@@ -24,3 +24,16 @@ export interface ApiResponse {
     success: boolean;
     data: GameConfig;
 }
+
+export interface Question {
+    content: string;
+    answer_expected: string;
+    answer_given: string;
+    pass: boolean;
+    response_time: number;
+}
+
+export interface GameData {
+    seed: string;
+    questions: Question[];
+}
