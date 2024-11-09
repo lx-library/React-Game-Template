@@ -1,4 +1,4 @@
-// src/utils/api.ts
+// src/utils.ts/api.ts
 import { SLIDES_MICROSERVICE_URL } from '../config';
 import type { GameConfig, ApiResponse } from '../types';
 

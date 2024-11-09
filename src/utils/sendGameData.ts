@@ -1,10 +1,16 @@
 // src/utils/sendGameData.ts
-import { sendRequest } from '../hooks/SendReq';
-import { GameData } from './formatGameData';
+import { sendRequestV3 } from '../hooks/SendReq';
+import { GameData } from '../types';
 
 export const sendGameData = async (gameData: GameData) => {
     try {
-        const response = await sendRequest({
+        // Retrieve the seed from local storage
+        const seed = localStorage.getItem('gameSeed');
+        if (seed) {
+            gameData.seed = seed;
+        }
+
+        const response = await sendRequestV3({
             endpoint: '/save-game-details',
             method: 'POST',
             body: JSON.stringify(gameData),

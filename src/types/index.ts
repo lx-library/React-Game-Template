@@ -12,7 +12,8 @@ export interface GameConfig {
     difficulty: string;
     timeLimit?: number;
     images?: ImageAsset[];
-    currentQuestion?: string; // Add this line
+    currentQuestion?: string;
+    seed: string; // Add this line
 }
 export interface ImageAsset {
     id: string;
