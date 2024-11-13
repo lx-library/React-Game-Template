@@ -73,7 +73,7 @@
       <recent name="D:\Careers\LXLibrary\Coding_and_Design\GameDev\react_template" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
