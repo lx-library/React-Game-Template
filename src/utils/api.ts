@@ -1,11 +1,13 @@
-// src/utils.ts/api.ts
+// src/utils/api.ts
 import { SLIDES_MICROSERVICE_URL } from '../config';
+import { STORAGE_KEYS } from '../config/storage_names';
 import type { GameConfig, ApiResponse } from '../types';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://api.lxlibrary.com';
 
 export const decryptGameSeed = async (seed: string): Promise<GameConfig> => {
-    const token = localStorage.getItem('gameToken');
+    const token = localStorage.getItem(STORAGE_KEYS.STUDENT_TOKEN);
+    console.log('token', token);
     const response = await fetch(`${SLIDES_MICROSERVICE_URL}/decrypt`, {
         method: 'POST',
         headers: {
@@ -14,6 +16,7 @@ export const decryptGameSeed = async (seed: string): Promise<GameConfig> => {
         },
         body: JSON.stringify({ encrypted: seed }),
     });
+    console.log('response', response);
 
     if (!response.ok) {
         throw new Error('Failed to decrypt game seed');

@@ -14,6 +14,7 @@ export const sendRequest = async ({ endpoint, method, body, responseType = 'json
     const headers: HeadersInit = {
         'Content-Type': 'application/json',
     };
+    console.log('body', body);
 
     if (token) {
         headers['Authorization'] = `Bearer ${token}`;
